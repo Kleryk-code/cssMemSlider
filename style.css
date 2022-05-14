@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+
+    src: local("Georgia"),
+
+         url("../../assets/fonts/Georgia.woff") format("woff");
+}  
+
+@font-face {
+    font-family: "Georgia-bold";
+    font-style: normal;
+    font-weight: 400;
+
+    src: local("Georgia-bold"),
+
+         url("../../assets/fonts/Georgia-bold.woff") format("woff");
+}  
+
+@font-face {
+    font-family: "Georgia-italic";
+    font-style: italic;
+    font-weight: 400;
+
+    src: local("Georgia-italic"),
+
+         url("../../assets/fonts/Georgia-italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Arial";
+    font-style: italic;
+    font-weight: 400;
+
+    src: local("arial"),
+
+         url("../../assets/fonts/arial.woff") format("woff");
+}
+
+
+
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li,
+picture,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    background-color: bisque;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+img, 
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.slider__wrapper {
+    margin: 0 auto;
+    width: 80vw;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: 
+    "pic pic pic pic"
+    "text text text control";
+}
+
+.slider {
+    display: flex;
+    width: 500%;
+    grid-area: pic;
+    margin-bottom: 20px;
+}
+
+.slider__slide {
+    margin: 0 auto;
+    width: 20%;
+    background-color: aqua;
+    border-radius: 15px;
+}
+
+.slider__slide img {
+    margin: 0 auto;
+    object-fit: contain;
+    
+    height: 60vh;
+}
+
+.slider {
+    transform: translate(-20%);
+}
+
+.textfield__wrapper {
+    width: 100%;
+}
+
+.textfield__wrapper {
+    display: flex;
+    grid-area: text;
+    overflow: hidden;
+}
+
+.slider__text {
+    text-align: left;
+}
+
+
+.slider__control {
+    display: flex;
+    grid-area: control;
+    justify-content: flex-end;
+    
+}
+
+.slider__control label {
+
+    width: 25px;
+}
+
+.slider__button {
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+    border: 1px solid blue;
+    border-radius: 50%;
+}
+
+

@@ -41,19 +41,15 @@
 
 
 
-html {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+
+
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
 }
-
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-
 
 
 *,
@@ -82,10 +78,10 @@ body {
     font-family: Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
-    color: #000000;
-    background-color: bisque;
+    color: #fff;
+    background-color: rgb(46, 45, 44);
 }
 
 input,
@@ -95,9 +91,7 @@ select {
     font: inherit;
 }
 
-a {
-    text-decoration: none;
-}
+
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -128,8 +122,10 @@ ul {
 }
 
 .slider__wrapper {
+    
     margin: 0 auto;
-    width: 80vw;
+    margin-top: 20px;
+    /* width: 80vw; */
     overflow: hidden;
     display: grid;
     grid-template-areas: 
@@ -137,64 +133,149 @@ ul {
     "text text text control";
 }
 
+
+
 .slider {
     display: flex;
     width: 500%;
     grid-area: pic;
     margin-bottom: 20px;
+    transition: all ease 0.5s;
 }
 
 .slider__slide {
     margin: 0 auto;
     width: 20%;
+    height: 60vh;
     background-color: aqua;
     border-radius: 15px;
 }
 
 .slider__slide img {
     margin: 0 auto;
-    object-fit: contain;
-    
-    height: 60vh;
-}
-
-.slider {
-    transform: translate(-20%);
-}
-
-.textfield__wrapper {
+    object-fit: cover;
+    object-position: 50% 50%;
+    height: 100%;
     width: 100%;
+    
+    
 }
 
 .textfield__wrapper {
-    display: flex;
-    grid-area: text;
     overflow: hidden;
+    grid-area: text;
 }
+.slider__textfield {
+    width: 500%;
+    display: flex;
+    transition: all ease 0.5s;
+    margin-top: 10px;
+}
+
 
 .slider__text {
     text-align: left;
+    width: 20%;
+    word-break: break-word;
+    overflow-wrap: break-word
 }
 
 
 .slider__control {
     display: flex;
     grid-area: control;
-    justify-content: flex-end;
-    
+    justify-content: flex-end; 
 }
 
 .slider__control label {
-
-    width: 25px;
+    width: 26px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slider__button {
-    width: 15px;
-    height: 15px;
-    background-color: blue;
-    border: 1px solid blue;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(77, 77, 231);
+    border: 2px solid rgb(77, 77, 231);
     border-radius: 50%;
+    transition: all ease 0.3s;
+}
+
+.slider__control label:hover .slider__button {
+    background-color: #fff;
+    border: 2px solid #fff;
+}
+
+#btn-1:checked ~ .slider__control .slider__btn-1  {
+    background-color: transparent;
+}
+#btn-2:checked ~ .slider__control .slider__btn-2  {
+    background-color: transparent;
+}
+#btn-3:checked ~ .slider__control .slider__btn-3  {
+    background-color: transparent;
+}
+#btn-4:checked ~ .slider__control .slider__btn-4  {
+    background-color: transparent;
+}
+#btn-5:checked ~ .slider__control .slider__btn-5  {
+    background-color: transparent;
+}
+
+#btn-2:checked ~ .slider {
+    transform: translateX(-20%);
+}
+#btn-3:checked ~ .slider {
+    transform: translateX(-40%);
+}
+#btn-4:checked ~ .slider {
+    transform: translateX(-60%);
+}
+#btn-5:checked ~ .slider {
+    transform: translateX(-80%);
+}
+
+#btn-2:checked ~ .textfield__wrapper .slider__textfield {
+    transform: translateX(-20%);
+}
+#btn-3:checked ~ .textfield__wrapper .slider__textfield {
+    transform: translateX(-40%);
+}
+#btn-4:checked ~ .textfield__wrapper .slider__textfield {
+    transform: translateX(-60%);
+}
+#btn-5:checked ~ .textfield__wrapper .slider__textfield{
+    transform: translateX(-80%);
 }
 
 
+
+
+@media screen and (max-width: 767px) { 
+    .slider__wrapper {
+        grid-template-areas: 
+        "pic pic pic pic"
+        "control control control control"
+        "text text text text";
+    }
+
+    .slider__slide {
+        height: 50vh;
+    }
+
+    .slider__control {
+        display: flex;
+        grid-area: control;
+        justify-content: center; 
+    }
+}
+
+@media screen and (max-width: 414px) { 
+    .slider__slide {
+        height: 40vh;
+    }
+}

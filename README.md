@@ -1,2 +1,3 @@
 # cssMemSlider
-CSS Mem Slider
+
+https://Kleryk-code.github.io/cssMemSlider/cssMemSlider

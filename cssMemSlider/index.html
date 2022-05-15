@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Mem Slider</title>
+    <link href="../../assets/fonts/arial.woff" as="font">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="slider__wrapper">
+            <input type="radio" name="control__btn" id="btn-1" checked class="visually-hidden">
+            <input type="radio" name="control__btn" id="btn-2" class="visually-hidden">
+            <input type="radio" name="control__btn" id="btn-3" class="visually-hidden">
+            <input type="radio" name="control__btn" id="btn-4" class="visually-hidden">
+            <input type="radio" name="control__btn" id="btn-5" class="visually-hidden">
+            <ul class="slider">
+                <li class="slider__slide slide-1">
+                    <img src="./images/mem1.jpg" alt="">
+                </li>
+                <li class="slider__slide slide-2">
+                    <img src="./images/mem2.jpg" alt="">
+                </li>
+                <li class="slider__slide slide-3">
+                    <img src="./images/mem3.jpeg" alt="">
+                </li>
+                <li class="slider__slide slide-4">
+                    <img src="./images/mem4.png" alt="">
+                </li>
+                <li class="slider__slide slide-5">
+                    <img src="./images/mem5.jpg" alt="">
+                </li>
+            </ul>
+
+            <div class="textfield__wrapper">
+                <div class="slider__textfield">
+                    <p class="slider__text">Как же сделать эту пагинацию?</p>
+                    <p class="slider__text">Где мои 150 баллов?</p>
+                    <p class="slider__text">Когда устроился на новую работу и звонишь ментору</p>
+                    <p class="slider__text">Опять Student1</p>
+                    <p class="slider__text">В понедельник доделаю</p>
+                </div>
+            </div>
+
+            <div class="slider__control">
+                <label for="btn-1">
+                    <div class="slider__button slider__btn-1"></div>
+                </label>
+                <label for="btn-2">
+                    <div class="slider__button slider__btn-2"></div>
+                </label>
+                <label for="btn-3">
+                    <div class="slider__button slider__btn-3"></div>
+                </label>
+                <label for="btn-4">
+                    <div class="slider__button slider__btn-4"></div>
+                </label>
+                <label for="btn-5">
+                    <div class="slider__button slider__btn-5"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

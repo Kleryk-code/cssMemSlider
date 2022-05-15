@@ -1,0 +1,271 @@
+@font-face {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+
+    src: local("Georgia"),
+
+         url("../../assets/fonts/Georgia.woff") format("woff");
+}  
+
+@font-face {
+    font-family: "Georgia-bold";
+    font-style: normal;
+    font-weight: 400;
+
+    src: local("Georgia-bold"),
+
+         url("../../assets/fonts/Georgia-bold.woff") format("woff");
+}  
+
+@font-face {
+    font-family: "Georgia-italic";
+    font-style: italic;
+    font-weight: 400;
+
+    src: local("Georgia-italic"),
+
+         url("../../assets/fonts/Georgia-italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Arial";
+    font-style: italic;
+    font-weight: 400;
+
+    src: local("arial"),
+
+         url("../../assets/fonts/arial.woff") format("woff");
+}
+
+
+
+
+
+
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li,
+picture,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #fff;
+    background-color: rgb(46, 45, 44);
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+img, 
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.slider__wrapper {
+    
+    margin: 0 auto;
+    margin-top: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: 
+    "pic pic pic pic"
+    "text text text control";
+}
+
+
+
+.slider {
+    display: flex;
+    width: 500%;
+    grid-area: pic;
+    margin-bottom: 20px;
+    transition: all ease 0.5s;
+}
+
+.slider__slide {
+    margin: 0 auto;
+    width: 20%;
+    height: auto;
+    background-color: #000;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.slider__slide img {
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: 50% 50%;
+    height: 100%;
+    width: 100%;
+    
+    
+}
+
+.textfield__wrapper {
+    overflow: hidden;
+    grid-area: text;
+}
+.slider__textfield {
+    width: 500%;
+    display: flex;
+    transition: all ease 0.5s;
+    margin-top: 10px;
+}
+
+
+.slider__text {
+    text-align: left;
+    width: 20%;
+    word-break: break-word;
+    overflow-wrap: break-word
+}
+
+
+.slider__control {
+    display: flex;
+    grid-area: control;
+    justify-content: flex-end; 
+}
+
+.slider__control label {
+    width: 26px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider__button {
+    width: 12px;
+    height: 12px;
+    background-color: rgb(77, 77, 231);
+    border: 2px solid rgb(77, 77, 231);
+    border-radius: 50%;
+    transition: all ease 0.3s;
+}
+
+.slider__control label:hover .slider__button {
+    background-color: #fff;
+    border: 2px solid #fff;
+}
+
+#btn-1:checked ~ .slider__control .slider__btn-1  {
+    background-color: transparent;
+}
+#btn-2:checked ~ .slider__control .slider__btn-2  {
+    background-color: transparent;
+}
+#btn-3:checked ~ .slider__control .slider__btn-3  {
+    background-color: transparent;
+}
+#btn-4:checked ~ .slider__control .slider__btn-4  {
+    background-color: transparent;
+}
+#btn-5:checked ~ .slider__control .slider__btn-5  {
+    background-color: transparent;
+}
+
+#btn-2:checked ~ .slider {
+    transform: translateX(-20%);
+}
+#btn-3:checked ~ .slider {
+    transform: translateX(-40%);
+}
+#btn-4:checked ~ .slider {
+    transform: translateX(-60%);
+}
+#btn-5:checked ~ .slider {
+    transform: translateX(-80%);
+}
+
+#btn-2:checked ~ .textfield__wrapper .slider__textfield {
+    transform: translateX(-20%);
+}
+#btn-3:checked ~ .textfield__wrapper .slider__textfield {
+    transform: translateX(-40%);
+}
+#btn-4:checked ~ .textfield__wrapper .slider__textfield {
+    transform: translateX(-60%);
+}
+#btn-5:checked ~ .textfield__wrapper .slider__textfield{
+    transform: translateX(-80%);
+}
+
+
+
+
+@media screen and (max-width: 767px) { 
+    .slider__wrapper {
+        grid-template-areas: 
+        "pic pic pic pic"
+        "control control control control"
+        "text text text text";
+    }
+
+    .slider__control {
+        display: flex;
+        grid-area: control;
+        justify-content: center; 
+    }
+}

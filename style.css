@@ -45,7 +45,7 @@
 
 
 .wrapper {
-    max-width: 1280px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
     
@@ -125,7 +125,6 @@ ul {
     
     margin: 0 auto;
     margin-top: 20px;
-    /* width: 80vw; */
     overflow: hidden;
     display: grid;
     grid-template-areas: 
@@ -146,9 +145,10 @@ ul {
 .slider__slide {
     margin: 0 auto;
     width: 20%;
-    height: 60vh;
-    background-color: aqua;
+    height: auto;
+    background-color: #000;
     border-radius: 15px;
+    overflow: hidden;
 }
 
 .slider__slide img {
@@ -263,19 +263,9 @@ ul {
         "text text text text";
     }
 
-    .slider__slide {
-        height: 50vh;
-    }
-
     .slider__control {
         display: flex;
         grid-area: control;
         justify-content: center; 
-    }
-}
-
-@media screen and (max-width: 414px) { 
-    .slider__slide {
-        height: 40vh;
     }
 }
